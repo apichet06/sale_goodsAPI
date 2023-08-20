@@ -14,7 +14,7 @@ class UserController {
             const { u_name, u_lastname, u_email, u_password } = req.body;
             const file = req.file;
             const folder = 'profile';
-            console.log(file);
+            // console.log(file);
 
             // Check for duplicate email
             const existingUser = await User.findByEmail(u_email);

@@ -31,6 +31,7 @@ class User {
 
       // Fetch the inserted user data แสง data ที่ insert 
       const [user] = await db.query('SELECT * FROM users WHERE id = ?', insertedUserId);
+
       return user;
 
     } catch (error) {
@@ -63,7 +64,7 @@ class User {
       if (result) {
         return result.affectedRows;
       } else {
-        throw new Error('User delete failed.'); // Handle the case when the delete
+        throw new Error('ลบข้อมูลไม่สำเร็จ!'); // Handle the case when the delete
       }
 
     } catch (error) {
@@ -80,7 +81,7 @@ class User {
       if (result) {
         return result;
       } else {
-        throw new Error('User select failed.')
+        throw new Error('ไม่พบข้อมูลผู้ใช้!')
       }
 
     } catch (error) {
