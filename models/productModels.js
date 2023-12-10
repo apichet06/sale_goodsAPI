@@ -1,4 +1,4 @@
-const db = require('../../config/database');
+const db = require('../config/database');
 
 
 
@@ -74,6 +74,7 @@ class ProductsModels {
 
             return productsWithImages;
         } catch (error) {
+            console.error('Error in ShowproductsAll:', error);
             throw error;
         }
     }
@@ -132,6 +133,7 @@ class ProductsModels {
                 return null; // หรือจะส่งข้อความแสดงว่าไม่พบรายการที่จะอัปเดตก็ได้
             }
         } catch (error) {
+            console.error('Error in update:', error);
             throw error;
         }
 

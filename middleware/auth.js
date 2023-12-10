@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 require('dotenv');
-require('../message/message');
+require('../config/message');
 class auth {
     static async authenticateToken(req, res, next) {
         const token = req.headers['authorization']?.split(' ')[1];

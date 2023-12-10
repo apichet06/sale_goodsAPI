@@ -1,9 +1,9 @@
-const User = require('../../models/users/UserModels');
-const FileHelper = require('../../models/fileuploads/fileModels');
+const User = require('../models/UserModels');
+const FileHelper = require('../models/fileModels');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv');
-require('../../message/message');
+require('../config/message');
 const fs = require('fs');
 
 

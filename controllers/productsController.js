@@ -1,7 +1,7 @@
-const productModels = require('../../models/products/productModels');
-const FileHelper = require('../../models/fileuploads/fileModels');
+const productModels = require('../models/productModels');
+const FileHelper = require('../models/fileModels');
 const moment = require('moment');
-require('../../message/message');
+require('../config/message');
 const fs = require('fs');
 const { log } = require('console');
 
@@ -85,8 +85,13 @@ class ProductController {
 
             // บันทึกข้อมูลรูปภาพ array
             await productModels.ProductImages(image_filename, pro_id);
+            if (product) {
+                res.status(200).json({ status: 'ok', data: product });
+            } else {
 
-            res.status(200).json({ status: 'ok', data: product });
+                res.status(404).json({ status: 'error', message: ID_not_found })
+            }
+
 
         } catch (error) {
             console.log(error);
